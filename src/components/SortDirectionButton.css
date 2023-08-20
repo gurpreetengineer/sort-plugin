@@ -1,0 +1,19 @@
+.sort-direction {
+  padding: 5px 10px;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.sort-direction.asc {
+  background-color: #c0ffc0;
+}
+
+.sort-direction.desc {
+  background-color: #ffc0c0;
+}
+
+.sort-direction.active {
+  font-weight: bold;
+}
