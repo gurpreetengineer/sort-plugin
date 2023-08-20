@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import SortComponent from './components/SortComponent';
 
-function App() {
+const App = () => {
+  const [sortObject, setSortObject] = useState({});
+  // Define your API endpoint and sort data here
+  const apiEndpoint = 'YOUR_API_ENDPOINT';
+  const sortData = {
+    // Your sort data configuration
+  };
+
+  const updateSortObject = (newSortObject) => {
+    setSortObject(newSortObject);
+    // Update your table data based on the new sort object
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h1>Table with Sorts</h1>
+      <SortComponent
+        apiEndpoint={apiEndpoint}
+        sortData={sortData}
+        sortObject={sortObject}
+        updateSortObject={updateSortObject}
+      />
     </div>
   );
-}
+};
 
 export default App;
